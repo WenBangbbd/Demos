@@ -12,6 +12,47 @@ namespace RoutingDemos
     {
         static void Main(string[] args)
         {
+            //默认参数和特殊参数
+            Host.CreateDefaultBuilder()
+                .ConfigureWebHostDefaults(builder =>
+                {
+                    builder.ConfigureServices(services => services.AddRouting());
+                    builder.Configure(app =>
+                    {
+                        app.UseRouting();
+                        app.UseEndpoints(endpoint => endpoint.MapGet("weather/{city=12}/{year}.{month}.{day}", InvokAsync));
+                    });
+                })
+                .Build()
+                .Run();
+            //可空的路由配置
+            Host.CreateDefaultBuilder()
+                .ConfigureWebHostDefaults(builder =>
+                {
+                    builder.ConfigureServices(services => services.AddRouting());
+                    builder.Configure(app =>
+                    {
+                        app.UseRouting();
+                        app.UseEndpoints(endpoint => endpoint.MapGet("weather/{city?}/{date?}", InvokAsync));
+                    });
+                })
+                .Build()
+                .Run();
+            //限制类型的路由配置
+            Host.CreateDefaultBuilder()
+                .ConfigureWebHostDefaults(builder =>
+                {
+                    builder.ConfigureServices(services => services.AddRouting());
+                    builder.Configure(app =>
+                    {
+                        app.UseRouting();
+                        app.UseEndpoints(endpoint => endpoint.MapGet("weather/{city:Int}/{date:DateTime}", InvokAsync));
+                    });
+                })
+                .Build()
+                .Run();
+
+
             //简单的配置路由
             Host.CreateDefaultBuilder()
                 .ConfigureWebHostDefaults(builder =>
