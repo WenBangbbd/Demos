@@ -1,3 +1,6 @@
 
 [Oo]bj/
 [Bb]in/
+obj/
+/NetCore/RoutingDemos/obj
+obj
