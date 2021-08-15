@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\github\\Demos\\NetCore\\RoutingDemos\\RoutingDemos\\RoutingDemos.csproj",
+      "projectUniqueName": "D:\\github\\Demos\\NetCore\\RoutingDemos\\RoutingDemos.csproj",
       "projectName": "RoutingDemos",
-      "projectPath": "D:\\github\\Demos\\NetCore\\RoutingDemos\\RoutingDemos\\RoutingDemos.csproj",
+      "projectPath": "D:\\github\\Demos\\NetCore\\RoutingDemos\\RoutingDemos.csproj",
       "packagesPath": "C:\\Users\\WenBa\\.nuget\\packages\\",
-      "outputPath": "D:\\github\\Demos\\NetCore\\RoutingDemos\\RoutingDemos\\obj\\",
+      "outputPath": "D:\\github\\Demos\\NetCore\\RoutingDemos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\WenBa\\AppData\\Roaming\\NuGet\\NuGet.Config",
