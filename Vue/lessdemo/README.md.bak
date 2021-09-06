@@ -26,7 +26,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### 引入ant-design-vue
 yarn add ant-design-vue@next
 在main.js中导入ant=>app.use(ant)
-在main.js中导入样式，import "ant-design-vue/dist/antd.css";
 在使用ant时，要注意其class和标签名称可能不一致，要注意看文档
 ### 引入less
 yarn add global less less-loader
