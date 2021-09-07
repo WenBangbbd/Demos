@@ -9,7 +9,9 @@
           <img class="logo" src="../assets/logo.png" alt="" />
           <span class="title">登录页面</span>
         </a>
-        <div class="desc">的撒法士大夫士大夫士大夫撒旦发生发射点撒旦飞洒地方撒旦飞洒发生大法师到底发生</div>
+        <div class="desc">
+          的撒法士大夫士大夫士大夫撒旦发生发射点撒旦飞洒地方撒旦飞洒发生大法师到底发生
+        </div>
       </a-layout-header>
       <a-layout-content>Content</a-layout-content>
 
@@ -20,12 +22,17 @@
           <a href="_self">条款</a>
         </div>
       </a-layout-footer>
+      <div>
+        <icon-test />
+      </div>
     </a-layout>
   </div>
 </template>
 
 <script>
+import  IconTest  from "./IconTest.vue";
 export default {
+  components: { "icon-test": IconTest },
   name: "UserLayout",
   data() {
     return {};
