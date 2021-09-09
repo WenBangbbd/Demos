@@ -39,7 +39,10 @@ npm i axios
 5. 提供全局变量 app.provide('axios', app.config.globalProperties.axios)
 6. 在steup中需要 const axios=inject('key')来获取变量，在method中就可以用this.axios来获取
 #### 封装api
-1.在api中创建js文件
+1. axios基础配置，包括拦截器等
+2. 在根目录下创建api文件夹
+3. 在api中封装api的方法
+4. 在组件中引入api封装方法既可以使用了
 
 ### 跨域问题
 1. 设置axios的baseurl为'api'，用于标记替换，看mian.js中

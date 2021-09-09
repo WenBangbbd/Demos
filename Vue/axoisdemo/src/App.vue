@@ -1,15 +1,18 @@
 <template>
   <login></login>
-  <logindomain></logindomain>
+  <!-- <logindomain></logindomain> -->
+  <login-config></login-config>
 </template>
 
 <script>
 import Login from "./components/Login.vue";
-import LoginResolveDomain from './components/LoginResolveDomain.vue';
+// import LoginResolveDomain from './components/LoginResolveDomain.vue';
+import LoginWithConfig from './components/LoginWithConfig.vue';
 export default {
   components: {
    login: Login,
-   logindomain:LoginResolveDomain,
+  //  logindomain:LoginResolveDomain,
+   "login-config":LoginWithConfig
   },
   name: "App",
 };

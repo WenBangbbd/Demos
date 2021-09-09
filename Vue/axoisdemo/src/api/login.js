@@ -4,9 +4,8 @@ export function getVertifyCode(parameter)
 {
     return request(
         {
-            url:'/VertifyCode',
+            url:`/api/Login/VertifyCode/${parameter}`,
             method:'get',
-            data:parameter
         }
     )
 }
