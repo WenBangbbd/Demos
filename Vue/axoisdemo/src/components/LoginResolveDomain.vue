@@ -18,23 +18,23 @@
       </a-button>
     </a-form-item>
   </a-form>
+  <br />
+  <button @click="action">按钮</button>
 </template>
 <script>
-import { defineComponent, reactive } from "vue";
-import axios from 'axios';
+import { defineComponent, reactive,inject } from "vue";
 
 export default defineComponent({
   setup() {
     const formState = reactive({
       mobile: "",
     });
-
+    //获取全局变量
+    const axios = inject("axios");
     const handleFinish = (values) => {
       console.log(values);
-      let url = "/api/Login/VertifyCode/" + formState.mobile;
-      axios.defaults.baseURL="/api"
-        axios
-        .get(url)
+      axios
+        .get("/api/Login/VertifyCode/12311")
         .then((values) => {
           console.log(values);
         })
@@ -53,7 +53,21 @@ export default defineComponent({
       handleFinishFailed,
     };
   },
-
+  methods: {
+    action() {
+      let url = "api/Login/VertifyCode/12311";
+      console.log("++++++++++++++++++");
+      console.log(this.axios);
+      this.axios
+        .get(url)
+        .then((values) => {
+          console.log(values);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
+  },
   components: {},
 });
 </script>
