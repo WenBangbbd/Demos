@@ -1,14 +1,14 @@
 <template>
   <div>
-    <button @click="doConnectionBtnClick()">连接</button>
-    <button @click="doSendBtnClick()">发送</button>
-    <input type="text" v-model="user" />
+    <button @click="doConnectionBtnClick()">连接</button><br>
+    <button @click="doSendBtnClick()">发送</button><br>
+    <input type="text" v-model="user" /><br>
     <input type="text" v-model="message" />
   </div>
 </template>
 
 <script>
-import signalR from "@microsoft/signalr";
+import * as signalR from "@microsoft/signalr";
 export default {
   data() {
     return {
@@ -27,7 +27,7 @@ export default {
     },
     initSignalr() {
       this.connection = new signalR.HubConnectionBuilder()
-        .withUrl("/chathub")
+        .withUrl("https://localhost:5001/chathub")
         .configureLogging(signalR.LogLevel.Information)
         .build();
       this.connection.on("ReceiveMessage", (user, message) => {

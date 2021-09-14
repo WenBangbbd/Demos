@@ -33,16 +33,18 @@ namespace SignalRDemo
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SignalRDemo", Version = "v1" });
             });
-            
-            services.AddSignalR();
             services.AddCors(options =>
             {
-                options.AddDefaultPolicy(builder =>
+                options.AddPolicy("signalr", builder =>
                 {
-                    builder.WithOrigins("https://example.com")
-                        .AllowCredentials();
+                    builder.WithOrigins("http://localhost:8080", "http://localhost:5000")
+                        .AllowCredentials()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
                 });
             });
+            services.AddSignalR();
+           
             services.AddChatServcies();
         }
 
@@ -56,11 +58,10 @@ namespace SignalRDemo
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SignalRDemo v1"));
             }
             app.UseStaticFiles();
-            app.UseHttpsRedirection();
 
+            app.UseHttpsRedirection();
             app.UseRouting();
-            app.UseCors();
-            app.UseAuthorization();
+            app.UseCors("signalr");
 
             app.UseEndpoints(endpoints =>
             {
