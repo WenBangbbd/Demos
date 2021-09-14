@@ -13,3 +13,7 @@
 3. 服务中使用时需要使用上下文IHubContext<THub,IChatClient>
 ### 创建客户端
 [创建windows客户端](../SignalRWindowsClientDemo/README.md)
+### 创建非跨域Web客户端
+1.wwwroot的localsignar即可
+### 创建跨域Web客户端
+[创建web客户端](../signalr-js-client-demo/README.md)

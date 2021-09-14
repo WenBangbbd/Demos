@@ -33,6 +33,7 @@ namespace SignalRDemo
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SignalRDemo", Version = "v1" });
             });
+            //¿çÓò
             services.AddCors(options =>
             {
                 options.AddPolicy("signalr", builder =>
