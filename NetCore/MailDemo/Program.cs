@@ -13,9 +13,9 @@ namespace MailDemo
             mailClient.UseDefaultCredentials = false;
 
             //授权,不是密码
-            mailClient.Credentials = new NetworkCredential("763111123@qq.com", "bwckniwsvmgabeba");
+            mailClient.Credentials = new NetworkCredential("....@qq.com", "授权码");
             //信息，
-            var message = new MailMessage(new MailAddress("763111123@qq.com"), new MailAddress("763111123@qq.com"));
+            var message = new MailMessage(new MailAddress("...@qq.com"), new MailAddress("...@qq.com"));
             message.IsBodyHtml = false;
             message.Body = "http://www.baidu.com";
             message.Subject = "subject";
