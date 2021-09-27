@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <span>{{message}}</span>
+        <br>
+        <pro v-bind:msg='message'></pro>
+    </div>
+    <div id='secApp'>
+        <span>{{message}}</span>
+        <br>
+        <pro v-bind:msg="message"></pro>
+    </div>
+</body>
+<script src="https://unpkg.com/vue@next"></script>
+<script>
+    //这样写不好，修改组件内参数会会警告是只读的
+    const vm = Vue.createApp({
+        data() {
+            return {
+                message: 'hello'
+            }
+        },
+    }).component('pro', {
+        props: ['msg'],
+        template: `<input v-model='msg'/><br><span>{{msg}}</span>`
+    }).mount('#app')
+
+</script>
+<script>
+    Vue.createApp({
+        data() {
+            return {
+                message: 'hello'
+            }
+        },
+    }).component('pro', {
+        props: ['msg'],
+        data() {
+            return {
+                localMsg: this.msg
+            }
+        },
+        template: `<input v-model='localMsg'/><span>{{localMsg}}</span>`
+    }).mount('#secApp')
+</script>
+
+</html>
