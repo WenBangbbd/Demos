@@ -38,10 +38,11 @@ namespace SignalRDemo
             {
                 options.AddPolicy("signalr", builder =>
                 {
-                    builder.WithOrigins("http://localhost:8080", "http://localhost:5000")
-                        .AllowCredentials()
+                    builder
+                        //.AllowCredentials()
+                        .AllowAnyMethod()
                         .AllowAnyHeader()
-                        .AllowAnyMethod();
+                        .AllowAnyOrigin();
                 });
             });
             services.AddSignalR();

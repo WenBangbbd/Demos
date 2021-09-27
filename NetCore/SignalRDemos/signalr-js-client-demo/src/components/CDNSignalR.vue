@@ -1,8 +1,11 @@
 <template>
   <div>
-    <button @click="doConnectionBtnClick()">连接</button><br>
-    <button @click="doSendBtnClick()">发送</button><br>
-    <input type="text" v-model="user" /><br>
+    <button @click="doConnectionBtnClick()">连接</button>
+    <br />
+    <button @click="doSendBtnClick()">发送</button>
+    <br />
+    <input type="text" v-model="user" />
+    <br />
     <input type="text" v-model="message" />
   </div>
 </template>
@@ -37,6 +40,7 @@ export default {
     },
     async start() {
       try {
+        console.log(this.connection);
         await this.connection.start();
         console.log("SignalR Connected.");
       } catch (err) {
