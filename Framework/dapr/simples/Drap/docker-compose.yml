@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  dapr.webapi:
+    image: ${DOCKER_REGISTRY-}daprwebapi
+    build:
+      context: .
+      dockerfile: Dapr.WebApi/Dockerfile
