@@ -1,0 +1,29 @@
+
+## 更换国内镜像
+1. 拷贝镜像源文件
+sudo cp /etc/apt/source.list /etc/apt/source.list.bak
+2. 删除镜像文件内容
+sudo vim /etc/apt/source.list
+然后通过%d可以删除全文
+3.替换为下面阿里的镜像文件
+deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse
+
+##  安装vscode，首先先下载lunux安装包
+1.  [地址](https://code.visualstudio.com/download)
+2. 拷贝到/opt目录下  
+    sudo cp <包名> /opt/
+3. 解压 到该目录
+    sudo tar -zxvf code-stable-x64-1637137380.tar.gz 
+4. 解压目录下的code就是执行文件
+5. 可以在任何目录下运行，将code连接到usr目录
+    sudo ln -s /opt/VSCode-linux-x64/code /usr/local/bin
+6. 在code . **& **   可以后台运行
